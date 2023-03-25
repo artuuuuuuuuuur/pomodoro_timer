@@ -3,10 +3,11 @@ import { Text, View, StyleSheet } from "react-native";
 
 type Props = {
     timerDate: Date;
+    playButton: boolean;
 }
-export const TimerCountDownDisplay: React.FC<Props> = ({ timerDate }) => {
+export const TimerCountDownDisplay: React.FC<Props> = ({ timerDate, playButton }) => {
     return (<View>
-        <Text style={styles.timerCountDownText}>
+        <Text style={playButton ? styles.timerCountDownTextPause : styles.timerCountDownTextPlay}>
             {timerDate.getMinutes().toString().padStart(2, "0")}:
             {timerDate.getSeconds().toString().padStart(2, "0")}
         </Text>
@@ -15,9 +16,18 @@ export const TimerCountDownDisplay: React.FC<Props> = ({ timerDate }) => {
 };
 
 const styles = StyleSheet.create({
-    timerCountDownText: {
+    
+    timerCountDownTextPlay: {
         fontSize: 40,
         fontWeight: "800",
-        color: '#fff'
+        color: "#fff"
+    },
+
+    timerCountDownTextPause: {
+        fontSize: 40,
+        fontWeight: "800",
+        color: '#fff',
+        top: -200    
     }
 })
+
