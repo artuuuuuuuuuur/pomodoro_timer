@@ -16,8 +16,7 @@ export const TimerToggleButton: React.FC<Props> = ({ isTimerRunning, stopTimer, 
             <View style={styles.container}>
                 <FontAwesome 
                     name={isTimerRunning ? 'pause' : 'play'} 
-                    size={125} 
-                    color="red"
+                    size={125}
                     style={styles.icon}>
                 </FontAwesome>
             </View>
@@ -27,7 +26,8 @@ export const TimerToggleButton: React.FC<Props> = ({ isTimerRunning, stopTimer, 
 
 const styles = StyleSheet.create({
     icon: {
-        alignSelf: 'center'
+        alignSelf: 'center',
+        color: 'white'
     },
     container: {
         borderWidth: 5, 
